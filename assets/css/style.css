@@ -1,0 +1,47 @@
+body {
+    /* Positioning */
+    margin-bottom: 150px;
+    /* Typography */
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #777;
+    background: url("../images/pattern109.jpg");
+}
+
+html {
+    /* Positioning */
+    position: relative;
+    /* Box-model */
+    min-height: 100%;
+}
+
+.jumbotron {
+    background-color: orange;
+    color: #fff;
+}
+
+
+/* general */
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    clear: both;
+}
+
+.rules {
+    height: 225px;
+}
+
+h2 {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 25px;
+    color: #777;
+}
+
+h1,
+h3 {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-weight: 700;
+    color: #4aaaa5;
+}

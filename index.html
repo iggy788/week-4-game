@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" media="screen">
+
+    <!-- End Head -->
+</head>
+
+<body>
+
+
+    <!-- Jumbotron for Title -->
+    <div class="jumbotron">
+        <h1 class="text-center">Crystal Collector</h1>
+        <h3 class="text-center">Click on a Crystal to Play!</h3>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Rules Panel -->
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">How to Play!</h3>
+                    </div>
+                    <div class="panel-body">
+                        <article class="rules">
+                            <p>You will be given a random number at the start of the game.</p>
+                            <p>There are four crystals to the right. By clicking you will add a specific amount of points to your total score.</p>
+                            <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+                            <p>The value of each crystal is hidden from you until you click on it.</p>
+                            <p>Each time when the game start, the game will change the value of each crystal.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <!-- End rules Panel -->
+
+            <!-- Match the Number Panel -->
+            <div class="col-lg-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Match the Number</h3>
+                    </div>
+                    <div class="panel-body">
+                        <h2 id="first-number"></h2>
+                        <h2 id="operator"></h2>
+                        <h2 id="second-number"></h2>
+                        <br>
+                        <h2 id="result"></h2>
+                    </div>
+                </div>
+            </div>
+            <!-- End Result Panel -->
+
+            <!-- Click the Crystal Panel -->
+            <div class="col-lg-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Click the Crystal</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <img src="assets/images/red.png" alt="" class="img red-crystal" style="height: 75px;">
+                        <img src="assets/images/green.png" alt="" class="img green-crystal" style="height: 75px;">
+                        <img src="assets/images/purple.png" alt="" class="img purple-crystal" style="height: 75px;">
+                        <img src="assets/images/yellow.png" alt="" class="img yellow-crystal" style="height: 75px;">
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+            <!-- End Click the Crystal Panel -->
+
+            <!-- Wins and Losses Panel -->
+            <div class="col-lg-6 ">
+                <div class="panel panel-default ">
+                    <div class="panel-heading ">
+                        <h3 class="panel-title ">Wins and Losses</h3>
+                    </div>
+                    <div class="panel-body ">
+                        <h2 id="wins ">Wins: </h2>
+                        <hr>
+                        <h2 id="result "></h2>
+                        <h2 id="losses ">Losses: </h2>
+                        <h2 id="result "></h2>
+                    </div>
+                </div>
+            </div>
+            <!-- End Wins and Losses Panel -->
+
+            <!-- Total Score Panel -->
+            <div class="col-lg-5 ">
+                <div class="panel panel-default ">
+                    <div class="panel-heading ">
+                        <h3 class="panel-title ">Total Score</h3>
+                    </div>
+                    <div class="panel-body ">
+                        <h1 id="first-number "></h1>
+                        <h1 id="operator "></h1>
+                        <h1 id="second-number "></h1>
+                        <br>
+                        <h1 id="result "></h1>
+                    </div>
+                </div>
+            </div>
+            <!-- End Total Score Panel -->
+
+        </div>
+    </div>
+    <!-- End Entire Containter -->
+
+    <!-- Added link to external javascript -->
+    <script src="assets/javascript/game.js "></script>
+</body>
+
+</html>
