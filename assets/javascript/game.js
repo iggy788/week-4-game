@@ -17,7 +17,8 @@ $(document).ready(function() {
     var purpleCrystal = Math.floor(Math.random() * 11) + 1;
     var yellowCrystal = Math.floor(Math.random() * 11) + 1;
     var randomNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
-    var totalScore = '';
+    var totalScore = 0;
+    var result;
 
     // This way when the user hits clear, we can guarantee a reset of the app.
     function startGame() {
@@ -47,14 +48,13 @@ $(document).ready(function() {
 
     // Add on click event to red crystal
     $('#red-crystal').click(function() {
-        totalScore = totalScore + redCrystal;
+        totalScore = totalScore + parseInt(redCrystal);
         $('#score').html(totalScore);
-        redCrystal = $(this).val();
         if (totalScore === randomNumber) {
             alert('You Win!');
             win();
         } else if (totalScore > randomNumber) {
-            alert('You lose Sucka!');
+            alert('You lose!');
             lose();
         }
         console.log('Your Pick: ' + redCrystal);
@@ -62,9 +62,8 @@ $(document).ready(function() {
 
     // Add on click event to green crystal
     $('#green-crystal').click(function() {
-        totalScore = totalScore + greenCrystal;
+        totalScore = totalScore + parseInt(greenCrystal);
         $('#score').html(totalScore);
-        greenCrystal = $(this).val();
         if (totalScore === randomNumber) {
             alert('You Win!');
             win();
@@ -76,9 +75,8 @@ $(document).ready(function() {
     });
     // Add on click event to purple crystal
     $('#purple-crystal').click(function() {
-        totalScore = totalScore + purpleCrystal;
+        totalScore = totalScore + parseInt(purpleCrystal);
         $('#score').html(totalScore);
-        purpleCrystal = $(this).val();
         if (totalScore === randomNumber) {
             alert('You Win!');
             win();
@@ -90,9 +88,8 @@ $(document).ready(function() {
     });
     // Add on click event to yellow crystal
     $('#yellow-crystal').click(function() {
-        totalScore = totalScore + yellowCrystal;
+        totalScore = totalScore + parseInt(yellowCrystal);
         $('#score').html(totalScore);
-        yellowCrystal = $(this).val();
         if (totalScore === randomNumber) {
             alert('You Win!');
             win();
