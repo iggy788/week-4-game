@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <!-- Added link to the jQuery Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
 
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -72,10 +72,10 @@
                     </div>
 
                     <div class="panel-body">
-                        <img src="assets/images/red.png" alt="" class="img red-crystal" style="height: 75px;">
-                        <img src="assets/images/green.png" alt="" class="img green-crystal" style="height: 75px;">
-                        <img src="assets/images/purple.png" alt="" class="img purple-crystal" style="height: 75px;">
-                        <img src="assets/images/yellow.png" alt="" class="img yellow-crystal" style="height: 75px;">
+                        <img id="red-crystal" src="assets/images/red.png" alt="" class="img red-crystal" style="height: 75px;">
+                        <img id="green-crystal" src="assets/images/green.png" alt="" class="img green-crystal" style="height: 75px;">
+                        <img id="purple-crystal" src="assets/images/purple.png" alt="" class="img purple-crystal" style="height: 75px;">
+                        <img id="yellow-crystal" src="assets/images/yellow.png" alt="" class="img yellow-crystal" style="height: 75px;">
                         <br><br>
                     </div>
                 </div>
@@ -115,13 +115,15 @@
                 </div>
             </div>
             <!-- End Total Score Panel -->
-
+            <div class="col-lg-4">
+                <button id="clear">Play Again</button>
+            </div>
         </div>
     </div>
     <!-- End Entire Containter -->
 
     <!-- Added link to external javascript -->
-    <script src="assets/javascript/game.js "></script>
+    <script type="text/javascript" src="assets/javascript/game.js "></script>
 </body>
 
 </html>
