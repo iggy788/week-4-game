@@ -18,7 +18,8 @@ $(document).ready(function() {
     var yellowCrystal = Math.floor(Math.random() * 11) + 1;
     var randomNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
     var totalScore = 0;
-    var result;
+    var win;
+    var lose;
 
     // This way when the user hits clear, we can guarantee a reset of the app.
     function startGame() {
@@ -114,12 +115,11 @@ $(document).ready(function() {
     // Testing
     // -----------------------------------------------------------------------------------------------
     console.log('Debugger is ON');
-    console.log(redCrystal);
-    console.log(greenCrystal);
-    console.log(purpleCrystal);
-    console.log(yellowCrystal);
-    console.log(totalScore);
-    console.log(randomNumber);
+    console.log('Red Crystal Value: ' + redCrystal);
+    console.log('Green Crystal Value: ' + greenCrystal);
+    console.log('Purple Crystal Value: ' + purpleCrystal);
+    console.log('Yellow Crystal Value: ' + yellowCrystal);
+    console.log('Random Number to Match Value: ' + randomNumber);
 
     // END OF DOCUMENT READY PROCESS
     // -----------------------------------------------------------------------------------------------
