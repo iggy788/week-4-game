@@ -10,7 +10,6 @@
 $(document).ready(function() {
     // GLOBAL VARIABLES
     // -----------------------------------------------------------------------------------------------
-    var debug = true;
     // Created a string which will hold the random number to be matched
     var redCrystal = Math.floor(Math.random() * 11) + 1;
     var greenCrystal = Math.floor(Math.random() * 11) + 1;
@@ -18,90 +17,104 @@ $(document).ready(function() {
     var yellowCrystal = Math.floor(Math.random() * 11) + 1;
     var randomNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
     var totalScore = 0;
-    var win;
-    var lose;
-
-    // This way when the user hits clear, we can guarantee a reset of the app.
-    function startGame() {
-        var redCrystal = Math.floor(Math.random() * 11) + 1;
-        var greenCrystal = Math.floor(Math.random() * 11) + 1;
-        var purpleCrystal = Math.floor(Math.random() * 11) + 1;
-        var yellowCrystal = Math.floor(Math.random() * 11) + 1;
-        var randomNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
-        var totalScore = 0;
-
-        // For each iteration, generate a new random number between 1 and 9.
+    var win = 0;
+    var lose = 0;
+    $('#result').html(randomNumber);
+    // -----------------------------------------------------------------------------------------------
+    // RESET GAME
+    // -----------------------------------------------------------------------------------------------
+    // Removing the var gives the reset function access to the Global Variables since we are now changing them too
+    function resetGame() {
+        // We are emptying the score div in the HTML
+        redCrystal = Math.floor(Math.random() * 11) + 1;
+        greenCrystal = Math.floor(Math.random() * 11) + 1;
+        purpleCrystal = Math.floor(Math.random() * 11) + 1;
+        yellowCrystal = Math.floor(Math.random() * 11) + 1;
+        randomNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+        totalScore = 0;
+        // Use the jQuery "empty()" method to clear the contents of the "#score" div.
+        $('#score').empty();
+        // Generate a new random number and then add it to the #result DIV in the HTML
         $('#result').html(randomNumber);
-        // Take this number and then add it to the rest of the string.
-        randomNumber = totalScore + randomNumber;
-        $('#result').empty();
+
+        // Testing the Reset
+        // -----------------------------------------------------------------------------------------------
+        console.log('RESET Debugger is ON');
+        console.log('Red Crystal Value: ' + redCrystal);
+        console.log('Green Crystal Value: ' + greenCrystal);
+        console.log('Purple Crystal Value: ' + purpleCrystal);
+        console.log('Yellow Crystal Value: ' + yellowCrystal);
+        console.log('Random Number to Match Value: ' + randomNumber);
     }
+    // -----------------------------------------------------------------------------------------------
     // FUNCTIONS
     // -----------------------------------------------------------------------------------------------
-    function debug(inDebugString) {
-        console.log(inDebugString);
+    function lostGame() {
+        alert('You lose!');
+        lose++;
+        $('#lossCounter').html(lose);
+        resetGame();
     }
 
+    function winGame() {
+        alert('You Win!');
+        win++;
+        $('#winCounter').html(win);
+        resetGame();
+    }
+    // -----------------------------------------------------------------------------------------------
     // MAIN PROCESS
     // -----------------------------------------------------------------------------------------------
-    // For each iteration, generate a new random number between 1 and 9.
-    $('#result').html(randomNumber);
-
+    // No special function needed because jQuery already has the built in click function
+    // -----------------------------------------------------------------------------------------------
     // Add on click event to red crystal
     $('#red-crystal').click(function() {
+        // We get the value associated with the crystal the user picked from here
         totalScore = totalScore + parseInt(redCrystal);
         $('#score').html(totalScore);
         if (totalScore === randomNumber) {
-            alert('You Win!');
-            win();
+            winGame();
         } else if (totalScore > randomNumber) {
-            alert('You lose!');
-            lose();
+            lostGame();
         }
-        console.log('Your Pick: ' + redCrystal);
     });
-
+    // -----------------------------------------------------------------------------------------------
     // Add on click event to green crystal
     $('#green-crystal').click(function() {
+        // We get the value associated with the crystal the user picked from here
         totalScore = totalScore + parseInt(greenCrystal);
         $('#score').html(totalScore);
         if (totalScore === randomNumber) {
-            alert('You Win!');
-            win();
+            winGame();
         } else if (totalScore > randomNumber) {
-            alert('You lose Sucka!');
-            lose();
+            lostGame();
         }
-        console.log('Your Pick: ' + greenCrystal);
     });
+    // -----------------------------------------------------------------------------------------------
     // Add on click event to purple crystal
     $('#purple-crystal').click(function() {
+        // We get the value associated with the crystal the user picked from here
         totalScore = totalScore + parseInt(purpleCrystal);
         $('#score').html(totalScore);
         if (totalScore === randomNumber) {
-            alert('You Win!');
-            win();
+            winGame();
         } else if (totalScore > randomNumber) {
-            alert('You lose Sucka!');
-            lose();
+            lostGame();
         }
-        console.log('Your Pick: ' + purpleCrystal);
     });
+    // -----------------------------------------------------------------------------------------------
     // Add on click event to yellow crystal
     $('#yellow-crystal').click(function() {
+        // We get the value associated with the crystal the user picked from here
         totalScore = totalScore + parseInt(yellowCrystal);
         $('#score').html(totalScore);
         if (totalScore === randomNumber) {
-            alert('You Win!');
-            win();
+            winGame();
         } else if (totalScore > randomNumber) {
-            alert('You lose Sucka!');
-            lose();
+            lostGame();
         }
-        console.log('Your Pick: ' + yellowCrystal);
     });
-    // We get the value associated with the crystal the user picked from here
-
+    // -----------------------------------------------------------------------------------------------
     // If users matched the random number you let them know.
 
     // If users went over the random number you let them know.
@@ -109,8 +122,6 @@ $(document).ready(function() {
     // Once the user has won or lost create an "on-click" event attached to the "#clear" button id.
 
     // Inside the on-click event...
-
-    // 13. Use the jQuery "empty()" method to clear the contents of the "#display" div.
 
     // Testing
     // -----------------------------------------------------------------------------------------------
