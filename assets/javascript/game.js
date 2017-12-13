@@ -11,6 +11,7 @@ $(document).ready(function() {
     // GLOBAL VARIABLES
     // -----------------------------------------------------------------------------------------------
     // Created a string which will hold the random number to be matched
+
     var redCrystal = Math.floor(Math.random() * 11) + 1;
     var greenCrystal = Math.floor(Math.random() * 11) + 1;
     var purpleCrystal = Math.floor(Math.random() * 11) + 1;
@@ -20,6 +21,7 @@ $(document).ready(function() {
     var win = 0;
     var lose = 0;
     $('#result').html(randomNumber);
+    // debug();
     // -----------------------------------------------------------------------------------------------
     // RESET GAME
     // -----------------------------------------------------------------------------------------------
@@ -39,12 +41,7 @@ $(document).ready(function() {
 
         // Testing the Reset
         // -----------------------------------------------------------------------------------------------
-        console.log('RESET Debugger is ON');
-        console.log('Red Crystal Value: ' + redCrystal);
-        console.log('Green Crystal Value: ' + greenCrystal);
-        console.log('Purple Crystal Value: ' + purpleCrystal);
-        console.log('Yellow Crystal Value: ' + yellowCrystal);
-        console.log('Random Number to Match Value: ' + randomNumber);
+        // debug();
     }
     // -----------------------------------------------------------------------------------------------
     // FUNCTIONS
@@ -61,6 +58,15 @@ $(document).ready(function() {
         win++;
         $('#winCounter').html(win);
         resetGame();
+    }
+
+    function debug() {
+        console.log('Debugger is ON');
+        console.log('Red Crystal Value: ' + redCrystal);
+        console.log('Green Crystal Value: ' + greenCrystal);
+        console.log('Purple Crystal Value: ' + purpleCrystal);
+        console.log('Yellow Crystal Value: ' + yellowCrystal);
+        console.log('Random Number to Match Value: ' + randomNumber);
     }
     // -----------------------------------------------------------------------------------------------
     // MAIN PROCESS
@@ -115,22 +121,8 @@ $(document).ready(function() {
         }
     });
     // -----------------------------------------------------------------------------------------------
-    // If users matched the random number you let them know.
-
-    // If users went over the random number you let them know.
-
-    // Once the user has won or lost create an "on-click" event attached to the "#clear" button id.
-
-    // Inside the on-click event...
-
     // Testing
     // -----------------------------------------------------------------------------------------------
-    console.log('Debugger is ON');
-    console.log('Red Crystal Value: ' + redCrystal);
-    console.log('Green Crystal Value: ' + greenCrystal);
-    console.log('Purple Crystal Value: ' + purpleCrystal);
-    console.log('Yellow Crystal Value: ' + yellowCrystal);
-    console.log('Random Number to Match Value: ' + randomNumber);
 
     // END OF DOCUMENT READY PROCESS
     // -----------------------------------------------------------------------------------------------
