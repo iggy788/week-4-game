@@ -76,7 +76,7 @@ $(document).ready(function() {
     // Add on click event to red crystal
     $('#red-crystal').click(function() {
         // We get the value associated with the crystal the user picked from here
-        totalScore = totalScore + parseInt(redCrystal);
+        totalScore = totalScore + redCrystal;
         $('#score').html(totalScore);
         if (totalScore === randomNumber) {
             winGame();
@@ -88,7 +88,7 @@ $(document).ready(function() {
     // Add on click event to green crystal
     $('#green-crystal').click(function() {
         // We get the value associated with the crystal the user picked from here
-        totalScore = totalScore + parseInt(greenCrystal);
+        totalScore = totalScore + greenCrystal;
         $('#score').html(totalScore);
         if (totalScore === randomNumber) {
             winGame();
@@ -100,7 +100,7 @@ $(document).ready(function() {
     // Add on click event to purple crystal
     $('#purple-crystal').click(function() {
         // We get the value associated with the crystal the user picked from here
-        totalScore = totalScore + parseInt(purpleCrystal);
+        totalScore = totalScore + purpleCrystal;
         $('#score').html(totalScore);
         if (totalScore === randomNumber) {
             winGame();
@@ -112,7 +112,7 @@ $(document).ready(function() {
     // Add on click event to yellow crystal
     $('#yellow-crystal').click(function() {
         // We get the value associated with the crystal the user picked from here
-        totalScore = totalScore + parseInt(yellowCrystal);
+        totalScore = totalScore + yellowCrystal;
         $('#score').html(totalScore);
         if (totalScore === randomNumber) {
             winGame();
